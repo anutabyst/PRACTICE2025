@@ -17,7 +17,7 @@ def get_holidays(
 ):
     verify_api_key(api_key)
 
-    # Приклад API для свят — Nager.Date (без ключа, для демо)
+ 
     url = f"https://date.nager.at/api/v3/NextPublicHolidays/{country.upper()}"
     response = requests.get(url)
 
@@ -26,10 +26,8 @@ def get_holidays(
 
     holidays = response.json()
 
-    # Відбираємо лише перші count свят
     nearest_holidays = holidays[:count]
 
-    # Форматуємо відповідь
     result = []
     for holiday in nearest_holidays:
         result.append({
